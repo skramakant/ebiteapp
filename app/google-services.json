@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "445253785764",
+    "firebase_url": "https://ebite-6d50b.firebaseio.com",
+    "project_id": "ebite-6d50b",
+    "storage_bucket": "ebite-6d50b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445253785764:android:ad22fcc1f5d5e877",
+        "android_client_info": {
+          "package_name": "com.ebite.www.ebite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445253785764-945qib69jgn67r4q5f4qf0daf64hsvlb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ebite.www.ebite",
+            "certificate_hash": "f0e3cad841c52272d1cc874279e38a5d50f048a1"
+          }
+        },
+        {
+          "client_id": "445253785764-o24tkqj0qjdeb0khosk8ca2gb6ta8mcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARViijNftxfGkps702hzYUuMINzdkF_sI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445253785764-o24tkqj0qjdeb0khosk8ca2gb6ta8mcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
