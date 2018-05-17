@@ -21,7 +21,7 @@ public class ImageViewModel {
         this.tweetTime = tweetTime;
     }
 
-    public void setSystemTime(String systemTime) {
+    public void setSystemTime(long systemTime) {
         this.systemTime = systemTime;
     }
 
@@ -41,14 +41,14 @@ public class ImageViewModel {
         return tweetTime;
     }
 
-    public String getSystemTime() {
+    public long getSystemTime() {
         return systemTime;
     }
 
     private String imageTweet;
     private String imageTweetHandle;
     private String tweetTime;
-    private String systemTime;
+    private long systemTime;
     private String imageUrl;
 
     public ImageViewModel(){}

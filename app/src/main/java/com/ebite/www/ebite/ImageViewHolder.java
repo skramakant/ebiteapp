@@ -32,6 +32,7 @@ public class ImageViewHolder extends RecyclerView.ViewHolder  {
     ImageView imageView;
     ProgressBar progressBar;
     Button shareImage;
+    ImageClickListener imageClickListener;
     public ImageViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
@@ -42,15 +43,16 @@ public class ImageViewHolder extends RecyclerView.ViewHolder  {
         shareImage = mView.findViewById(R.id.shareImage);
     }
 
-    public void bindImageData(ImageViewModel model){
+    public void bindImageData(ImageViewModel model, final ImageClickListener imageClickListener, final int position){
         Log.v("ImageViewHolder",model.getImageUrl());
+        this.imageClickListener = imageClickListener;
         imageViewModel = model;
-        imageView.setDrawingCacheEnabled(true);
+//        imageView.setDrawingCacheEnabled(true);
         Picasso.get()
                 .load(model.getImageUrl())
-                .networkPolicy(NetworkPolicy.OFFLINE)
+//                .networkPolicy(NetworkPolicy.)
                 .placeholder(R.mipmap.placeholder)
-                .error(R.mipmap.placeholder)
+                .error(R.mipmap.placeholder)//.into(imageView);
                 .into(imageView, new Callback() {
                     @Override
                     public void onSuccess() {
@@ -59,7 +61,7 @@ public class ImageViewHolder extends RecyclerView.ViewHolder  {
 
                     @Override
                     public void onError(Exception e) {
-
+//                        progressBar.setVisibility(View.GONE);
                     }
                 });
 
@@ -67,14 +69,8 @@ public class ImageViewHolder extends RecyclerView.ViewHolder  {
         mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,MapView.class);
-                v.buildDrawingCache();
 
-//                Bitmap bitmap = v.getDrawingCache();
-//                Bitmap bitmap = Bitmap.createBitmap(v.getDrawingCache());
-                intent.putExtra("bitmap",imageViewModel.getImageUrl());
-                mContext.startActivity(intent);
-                Log.v("MapView","Image Clicked");
+                imageClickListener.showImage(imageViewModel.getImageUrl(),position);
             }
         });
 
